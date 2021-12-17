@@ -6,3 +6,10 @@ C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\
 C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\TP\TP\GUILLERMIN.DOMAS.TPGarage\bin\Debug\GUILLERMIN.DOMAS.TPGarage.exe.config
 C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\TP\TP\GUILLERMIN.DOMAS.TPGarage\bin\Debug\GUILLERMIN.DOMAS.TPGarage.exe
 C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\TP\TP\GUILLERMIN.DOMAS.TPGarage\bin\Debug\GUILLERMIN.DOMAS.TPGarage.pdb
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\bin\Debug\GUILLERMIN.DOMAS.TPGarage.exe.config
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\bin\Debug\GUILLERMIN.DOMAS.TPGarage.exe
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\bin\Debug\GUILLERMIN.DOMAS.TPGarage.pdb
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\obj\Debug\GUILLERMIN.DOMAS.TPGarage.csproj.AssemblyReference.cache
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\obj\Debug\GUILLERMIN.DOMAS.TPGarage.csproj.CoreCompileInputs.cache
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\obj\Debug\GUILLERMIN.DOMAS.TPGarage.exe
+C:\Users\Jadoune\Dropbox (PCI)\EPSI_COURS\B2\COURS_B2\Nicolas_ChevalierC#\C#POO\TP\GUILLERMIN.DOMAS.TPGarage\obj\Debug\GUILLERMIN.DOMAS.TPGarage.pdb

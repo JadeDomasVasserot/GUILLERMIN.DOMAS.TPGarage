@@ -132,9 +132,14 @@ namespace GUILLERMIN.DOMAS.TPGarage
                             if (VehiculeSelected  ==  null) {
                                 throw new ResearchNullException("Selectionner un vehicule d'abord !");
                             }
+                           
                             VehiculeSelected.addOptions(SelectOption());
                         }
                         catch (ResearchNullException e)
+                        {
+                            Console.WriteLine("Erreur : {0}", e.Message);
+                        }
+                        catch(ExistOptionException e)
                         {
                             Console.WriteLine("Erreur : {0}", e.Message);
                         }
@@ -145,6 +150,10 @@ namespace GUILLERMIN.DOMAS.TPGarage
                             RemoveOptions();
                         }
                         catch (OptionNullExecption e)
+                        {
+                            Console.WriteLine("Erreur ! " + e.Message);
+                        }
+                        catch (ResearchNullException e)
                         {
                             Console.WriteLine("Erreur ! " + e.Message);
                         }
@@ -235,6 +244,7 @@ namespace GUILLERMIN.DOMAS.TPGarage
             switch (choixselect) {
                 case 1:
                     GarageMenu._Vehicules.Remove(vehiculeSelected);
+                    vehiculeSelected = null;
                     Console.WriteLine("Véhicule supprimer");
                     break;
                 case 2:
@@ -245,16 +255,39 @@ namespace GUILLERMIN.DOMAS.TPGarage
          }
         public void RemoveOptions()
         {
-            vehiculeSelected.afficherOptions();
+           
             int choixselect = choixSelected();
-            Console.WriteLine("Quelle option souhaitez-vous supprimer ?");
-            string nomChoix = Console.ReadLine();
-            Options choixOption = GarageMenu.Options.Find(option => option.Nom == nomChoix);
-            try
-            {
-                if (nomChoix == null)
+                       
+            try { 
+            switch (choixselect)
                 {
-                    throw new OptionNullExecption();
+                   
+                    case 1:
+                        Console.WriteLine(vehiculeSelected.afficherOptions());
+                        Console.WriteLine("Choississez une option ");
+                        string nomChoix = Console.ReadLine();
+                        Options choixOption = vehiculeSelected.Options.Find(option => option.Nom == nomChoix);
+                        if (choixOption == null)
+                        {
+                            throw new OptionNullExecption();
+                        }
+                        VehiculeSelected.Options.Remove(choixOption);
+                        Console.WriteLine("Option supprimée");
+                        break;
+                    case 2:
+                        Vehicule veh = selectVehByName();
+                        Console.WriteLine(veh.afficherOptions());
+                        Console.WriteLine("Choississez une option ");
+                        string nomChoixSelect = Console.ReadLine();
+                        Options choixOptionSelect = veh.Options.Find(option => option.Nom == nomChoixSelect);
+                        if (choixOptionSelect == null)
+                        {
+                            throw new OptionNullExecption();
+                        }
+                        veh.Options.Remove(choixOptionSelect);
+
+                        Console.WriteLine("Option supprimée");
+                        break;
                 }
             }
             catch (OptionNullExecption)
@@ -265,40 +298,33 @@ namespace GUILLERMIN.DOMAS.TPGarage
             {
                 throw new ResearchNullException();
             }
-            switch (choixselect)
-            {
-                   
-                case 1:                  
-                    VehiculeSelected.Options.Remove(choixOption);
-                    Console.WriteLine("Option supprimée");
-                    break;
-                case 2:
-                    Vehicule veh = selectVehByName();
-                    veh.afficherOptions();
-                    veh.Options.Remove(choixOption);
-                    Console.WriteLine("Option supprimée");
-                    break;
-            }
         }
         public int choixSelected()
         {
             string txt = "";
             int choixselect = 0;
-            Console.WriteLine("1. Voulez-vous effectue une action sur le véhicule choisi ?");
-            Console.WriteLine("2. Ou rentrer le nom du véhicule !");
-            txt = Console.ReadLine();
-            try
+            if (vehiculeSelected == null)
             {
-                choixselect = Convert.ToInt32(txt);
-                if (choixselect < 1 || choixselect > 2)
+                choixselect = 2;
+            }
+            else
+            {
+                Console.WriteLine("1. Voulez-vous effectue une action sur le véhicule choisi ?");
+                Console.WriteLine("2. Ou rentrer le nom du véhicule !");
+                txt = Console.ReadLine();
+                try
+                {
+                    choixselect = Convert.ToInt32(txt);
+                    if (choixselect < 1 || choixselect > 2)
+                    {
+                        throw new ChoixSelectOrNotException();
+                    }
+
+                }
+                catch (ChoixSelectOrNotException)
                 {
                     throw new ChoixSelectOrNotException();
                 }
-
-            }
-            catch (ChoixSelectOrNotException)
-            {
-                throw new ChoixSelectOrNotException();
             }
             return choixselect;
         }
@@ -341,6 +367,9 @@ namespace GUILLERMIN.DOMAS.TPGarage
         public OutofChoixException() : base("Le choix n'est pas compris entre 1 et 3.")
         {
         }
+        public OutofChoixException(string message) : base(message)
+        {
+        }
 
     }
     [Serializable]
@@ -357,6 +386,14 @@ namespace GUILLERMIN.DOMAS.TPGarage
     public class ChoixVehiculeException : Exception
     {
         public ChoixVehiculeException() : base("Vous n'avez pas choisi de véhicule")
+        {
+        }
+
+    }
+    [Serializable]
+    public class ExistOptionException : Exception
+    {
+        public ExistOptionException() : base("L'option choisi existe déjà sur le véhicule")
         {
         }
 

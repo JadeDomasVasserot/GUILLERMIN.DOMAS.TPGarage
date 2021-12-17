@@ -64,15 +64,15 @@ namespace GUILLERMIN.DOMAS.TPGarage
             garage1._Vehicules.Sort();
             garage1.afficherVehicules();
             Console.WriteLine("\n=========================MENU========================\n");
-            garage1.addOption(ecran);
-            garage1.addOption(climatisation);
-            garage1.addOption(gps);
-            garage1.addOption(vitresAuto);
-            garage1.addOption(radio);
-            garage1.addOption(phareXenon);
-            garage1.addOption(pluieDetect);
-            garage1.addOption(compteurCarbon);
-            garage1.addOption(echappement);
+            garage1.addOptionList(ecran);
+            garage1.addOptionList(climatisation);
+            garage1.addOptionList(gps);
+            garage1.addOptionList(vitresAuto);
+            garage1.addOptionList(radio);
+            garage1.addOptionList(phareXenon);
+            garage1.addOptionList(pluieDetect);
+            garage1.addOptionList(compteurCarbon);
+            garage1.addOptionList(echappement);
 
             //Add Moteur
             garage1.addMoteur(moteurDiesel);

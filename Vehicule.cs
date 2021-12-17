@@ -65,6 +65,10 @@ namespace GUILLERMIN.DOMAS.TPGarage
         }
         public void addOptions(Options option)
         {
+            if (Options.Find(optionSearch => optionSearch == option) != null)
+            {
+                throw new ExistOptionException();
+            }
             Options.Add(option);
         }
         public abstract decimal calculTaxe();
